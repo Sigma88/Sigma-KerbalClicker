@@ -7,13 +7,11 @@ namespace SigmaKerbalClickerPlugin
 {
     internal class KerbalClicker : MonoBehaviour
     {
-        internal GameObject helmet;
-
         // MunScene
         internal Animation animation;
         internal MenuRandomKerbalAnims mrka;
-        static float[] groundDelays = new float[] { 0.35f, 0.25f, 0.2f, 0.25f, 0.4f, 0, 0.1f };
-        static string[] groundAnims = new string[] { "idle_c", "idle_a", "idle_b", "idle_d", "idle_f", "idle_g", "idle_i" };
+        static float[] groundDelays = new float[] { 0.25f, 0.2f, 0.25f, 0.4f, 0, 0.1f, 0.35f };
+        static string[] groundAnims = new string[] { "idle_a", "idle_b", "idle_d", "idle_f", "idle_g", "idle_i", "idle_c" };
 
         // OrbitScene
         internal Animator animator;
@@ -25,9 +23,7 @@ namespace SigmaKerbalClickerPlugin
             {
                 if (!animation.IsPlaying("idle")) return;
 
-                int min = helmet.activeSelf ? 0 : 1;
-
-                int rnd = Random.Range(min, 6);
+                int rnd = Random.Range(0, mrka.anims.Length - 1);
 
                 string clipName = groundAnims[rnd];
                 animation.Play(clipName);

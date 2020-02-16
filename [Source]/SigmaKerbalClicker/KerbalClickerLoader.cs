@@ -33,9 +33,6 @@ namespace SigmaKerbalClickerPlugin
                     // Kerbal Clicker
                     KerbalClicker kc = capsule.AddComponent<KerbalClicker>();
 
-                    // Helmet
-                    kc.helmet = kerbal.GetChild("helmet01") ?? kerbal.GetChild("mesh_female_kerbalAstronaut01_helmet01");
-
                     // Mun Scene
                     kc.mrka = kerbal.GetComponent<MenuRandomKerbalAnims>();
                     kc.animation = kerbal.GetComponent<Animation>();
