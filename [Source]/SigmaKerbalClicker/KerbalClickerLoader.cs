@@ -30,10 +30,11 @@ namespace SigmaKerbalClickerPlugin
                         capsule = GameObject.CreatePrimitive(PrimitiveType.Capsule);
                         capsule.name = "joints01_capsule_collider";
                         capsule.layer = 15;
-                        capsule.transform.SetParent(kerbal.GetChild("joints01").transform, true);
+                        capsule.transform.SetParent(kerbal.GetChild("joints01").transform);
                         capsule.transform.localPosition = new Vector3(0, 0.42f, -0.025f);
                         capsule.transform.localScale = new Vector3(0.25f, 0.42f, 0.35f);
                         capsule.transform.localRotation = Quaternion.identity;
+                        capsule.transform.SetParent(kerbal.GetChild("bn_spA01").transform);
                         DestroyImmediate(capsule.GetComponent<Renderer>());
                     }
 
