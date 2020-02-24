@@ -17,7 +17,7 @@ namespace SigmaKerbalClickerPlugin
         internal Animator animator;
         internal Bobber bobber;
 
-        void OnMouseDown()
+        internal void OnMouseDown()
         {
             if (mrka != null)
             {
@@ -93,6 +93,16 @@ namespace SigmaKerbalClickerPlugin
                     }
                 }
             }
+        }
+    }
+
+    internal class HelmetClicker : MonoBehaviour
+    {
+        internal KerbalClicker kc;
+
+        void OnMouseDown()
+        {
+            kc?.OnMouseDown();
         }
     }
 }
